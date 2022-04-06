@@ -1,5 +1,5 @@
 import React , {useContext} from "react";
-import { View, Button, StyleSheet } from "react-native";
+import { View, Button, ScrollView, StyleSheet } from "react-native";
 import { Image } from "react-native-expo-image-cache";
 
 import colors from "../config/colors";
@@ -13,7 +13,7 @@ function ListingDetailsScreen({ route }) {
   const { addCartItem  } = useContext(CartContext);
 
   return (
-    <View>
+    <ScrollView>
         <Image
           style={styles.image}
           tint="light"
@@ -29,8 +29,7 @@ function ListingDetailsScreen({ route }) {
         <Text style={styles.subTitle}>{listing.description} </Text>
         <Text style={styles.price}>£{listing.price}</Text> 
       </View>
-
-    </View>
+    </ScrollView>
   );
 }
 
