@@ -8,7 +8,7 @@ import {CartContext} from "../contexts/CartContext"
 
 function ListingCartScreen({ navigation }) {
 
-  const { cartState, addCartItem, removeCartItem, removeAllCartItem } = useContext(CartContext);
+  const { cartState, addCartItem, removeCartItem, removeAllCartItem, calculateTotalCost } = useContext(CartContext);
 
   return (
     <Screen style={styles.screen}>
@@ -17,8 +17,9 @@ function ListingCartScreen({ navigation }) {
         cartState.items.map((item,i) => 
         
         <Card
-          title={item.product.name}
+          title={item.product.title}
           qty={item.count}
+          subTotal={item.cost.toFixed(1)}
           onPress={() => navigation.navigate("ListingDetails", item.product)}
           increaseCart = {() => addCartItem(item.product)}
           reduceCart = {() => removeCartItem(item.product)}

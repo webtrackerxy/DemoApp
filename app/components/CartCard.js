@@ -6,7 +6,7 @@ import Text from "./Text";
 import colors from "../config/colors";
 
 
-function Card({ title, subTitle, colour, qty,  onPress, increaseCart, reduceCart,  removeCart }) {
+function Card({ title, subTitle, colour, qty, subTotal, onPress, increaseCart, reduceCart,  removeCart }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
@@ -15,7 +15,7 @@ function Card({ title, subTitle, colour, qty,  onPress, increaseCart, reduceCart
             {title}
           </Text>
           <Text style={styles.subTitle} numberOfLines={2}>
-            Qty:{qty}
+            Qty:{qty}  Sub Total: {subTotal}
           </Text> 
           <View style={{flexDirection: "row" , marginLeft:5, alignSelf: "center", }}>
             <Button h={40} w={100} title="+ Qty" onPress={increaseCart} />

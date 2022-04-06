@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DemoApp",
-    "slug": "demoapp",
+    "name": "DemoRNApp",
+    "slug": "demornapp",
     "platforms": [
       "ios",
       "android",

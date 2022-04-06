@@ -5,7 +5,7 @@ Demo code for react native shopping cart
 <img src="./screen.jpeg" width="50%" height="50%">
 
 Install Expo Go in your phone, open following link<br>
-https://expo.dev/@webtrackerxyz/demoapp
+https://expo.dev/@webtrackerxyz/demornapp
 
 
 Tested environment: <br>
@@ -15,8 +15,9 @@ react: 17.0.2 <br>
 react native: 0.67.3 <br>
 
 // Functions
-1. get JSON FROM https://my-json-server.typicode.com/benirvingplt/products/products
+1. get JSON FROM hhttps://fakestoreapi.com/products
 2. List the items by state
+3. Search product -> filter the products by product name
 3. Click the item -> Details
 4. "ADD to CART" -> add to card
 5. CART -> ADD / EDIT / REMOVE

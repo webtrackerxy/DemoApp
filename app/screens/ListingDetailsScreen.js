@@ -1,26 +1,35 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React , {useContext} from "react";
+import { View, Button, StyleSheet } from "react-native";
 import { Image } from "react-native-expo-image-cache";
 
 import colors from "../config/colors";
 import Text from "../components/Text";
 
+import {CartContext} from "../contexts/CartContext"
+
 function ListingDetailsScreen({ route }) {
   const listing = route.params;
 
+  const { addCartItem  } = useContext(CartContext);
+
   return (
     <View>
-      <Image
-        style={styles.image}
-        preview={{ uri: listing.img }}
-        tint="light"
-        uri={listing.url}
-      />
+        <Image
+          style={styles.image}
+          tint="light"
+          uri={listing.image}
+        />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{listing.name}</Text>
-        <Text style={styles.price}>${listing.price}</Text>
-        <Text style={styles.price}>{listing.colour} Colour</Text>
+        <Button
+              onPress={() => addCartItem(listing, true)}
+              title="Add to Cart"
+              color="#841584"
+          /> 
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.subTitle}>{listing.description} </Text>
+        <Text style={styles.price}>£{listing.price}</Text> 
       </View>
+
     </View>
   );
 }
@@ -44,7 +53,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "500",
   },
-
+  subTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
 });
 
 export default ListingDetailsScreen;
