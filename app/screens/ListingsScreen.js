@@ -14,7 +14,7 @@ import {CartContext} from "../contexts/CartContext"
 
 function ListingsScreen({ navigation }) {
 
-  const { productState, setProductState, searchProduct}  = useContext(ProductContext);
+  const { productState, setProductState }  = useContext(ProductContext);
   const { addCartItem  } = useContext(CartContext);
 
   const getListingsApi = useApi(listingsApi.getListings);
@@ -25,7 +25,7 @@ function ListingsScreen({ navigation }) {
 
   productState.items = getListingsApi.data;
 
-  const [searchText, setSearchText] = React.useState(" ");
+  const [searchText, setSearchText] = React.useState("");
   const [products, setProducts] = React.useState(productState.items);
 
   React.useEffect (() =>{
@@ -54,7 +54,7 @@ function ListingsScreen({ navigation }) {
         value={searchText}        
       />
       <FlatList
-        data={products.length >0  ? products : productState.items}
+        data={ searchText.length >0 ? products : productState.items}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card

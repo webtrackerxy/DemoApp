@@ -29,6 +29,9 @@ function ListingCartScreen({ navigation }) {
         ) 
       }
      
+     <View style={styles.detailsContainer}>
+        <Text style={styles.price}>Total: £{cartState.totalCost.toFixed(1)}</Text> 
+      </View>
     </Screen>
   );
 }

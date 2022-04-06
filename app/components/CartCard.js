@@ -15,7 +15,7 @@ function Card({ title, subTitle, colour, qty, subTotal, onPress, increaseCart, r
             {title}
           </Text>
           <Text style={styles.subTitle} numberOfLines={2}>
-            Qty:{qty}  Sub Total: {subTotal}
+            Qty:{qty}  Sub Total: £{subTotal}
           </Text> 
           <View style={{flexDirection: "row" , marginLeft:5, alignSelf: "center", }}>
             <Button h={40} w={100} title="+ Qty" onPress={increaseCart} />
