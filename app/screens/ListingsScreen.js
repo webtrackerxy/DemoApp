@@ -33,7 +33,7 @@ function ListingsScreen({ navigation }) {
   },[searchText]);
 
   const searchTextFunction = () => {
-      setProducts(productState.items.filter(item => item.title.includes(searchText)))
+      setProducts(productState.items.filter(item => item.title.toLowerCase().includes(searchText.toLowerCase())))
   }
 
 
